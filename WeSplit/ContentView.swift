@@ -10,13 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var tapCount = 0
+    @State private var name = ""
     
     var body: some View {
-        Button("Tap count \(tapCount)") {
-        self.tapCount += 1
-    }
-    .navigationBarTitle("Swift UI", displayMode: .inline)
+        Form {
+            TextField("Enter your name", text: $name)
+            Text("Your name is \(name)")
+        }
     }
 }
 
